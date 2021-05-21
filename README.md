@@ -9,7 +9,7 @@ This Docker creates a simple local forward SSH tunnel over a server. It is very 
 
 1. Don't forget to put your private key (`id_rsa`) to `~/.ssh` folder.
 
-2. To run the docker image you can use docker-compose or a simple docker run command :
+2. To run the docker image you can use `docker-compose` or a simple `docker run command` :
 
 ```yaml
 version: '3'
@@ -25,6 +25,6 @@ services:
 docker run --rm --name mytunnel -v $HOME/.ssh/id_rsa:/home/mole/id_rsa:ro craf/docker-mole-hole:latest *:<LOCAL_PORT>:<REMOTE_IP>:<REMOTE_PORT> <TUNNEL_HOST> -p <CUSTOM_TUNNEL_PORT>
 ```
 
-5. Run `docker-compose up -d`
+5. In case you are using `docker-compose` then run `docker-compose up -d` and it should work
 
 After you start up docker containers, any container in the same network will be able to access to tunneled instance.
